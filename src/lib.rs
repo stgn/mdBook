@@ -75,10 +75,11 @@ extern crate pulldown_cmark;
 
 #[macro_use] extern crate log;
 pub mod book;
-mod parse;
 pub mod renderer;
 pub mod theme;
 pub mod utils;
+mod summary;
+mod parse;
 
 pub use book::MDBook;
 pub use book::BookItem;
