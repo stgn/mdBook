@@ -109,27 +109,18 @@ table thead td {
   white-space: nowrap;
 }
 .page-wrapper {
-  padding-left: 300px;
+  margin-left: 0;
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
   box-sizing: border-box;
   min-height: 100%;
-  -webkit-transition: padding-left 0.5s;
-  -moz-transition: padding-left 0.5s;
-  -o-transition: padding-left 0.5s;
-  -ms-transition: padding-left 0.5s;
-  transition: padding-left 0.5s;
-}
-@media only screen and (max-width: 1060px) {
-  .page-wrapper {
-    padding-left: 0;
-  }
-}
-.sidebar-hidden .page-wrapper {
-  padding-left: 0;
-}
-.sidebar-visible .page-wrapper {
-  padding-left: 300px;
+  width: 100%;
+  overflow-x: hidden;
+  -webkit-transition: margin-left 0.5s, width 0.5s;
+  -moz-transition: margin-left 0.5s, width 0.5s;
+  -o-transition: margin-left 0.5s, width 0.5s;
+  -ms-transition: margin-left 0.5s, width 0.5s;
+  transition: margin-left 0.5s, width 0.5s;
 }
 .page {
   outline: 0;
@@ -139,7 +130,13 @@ table thead td {
   margin-left: auto;
   margin-right: auto;
   max-width: 750px;
+  width: 100%;
   padding-bottom: 50px;
+  -webkit-transition: width 0.5s;
+  -moz-transition: width 0.5s;
+  -o-transition: width 0.5s;
+  -ms-transition: width 0.5s;
+  transition: width 0.5s;
 }
 .content a {
   text-decoration: none;
@@ -150,9 +147,17 @@ table thead td {
 .content img {
   max-width: 100%;
 }
+.sidebar-visible .page-wrapper {
+  margin-left: 300px;
+  width: calc(100% - 300px);
+}
+.sidebar-visible .content {
+  width: calc(100% + 300px);
+}
 .menu-bar {
   position: relative;
   height: 50px;
+  min-width: 290px;
 }
 .menu-bar i {
   position: relative;
